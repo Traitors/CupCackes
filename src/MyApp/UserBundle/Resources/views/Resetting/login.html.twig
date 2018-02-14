@@ -1,0 +1,5 @@
+{% extends "MyAppUserBundel::layout.html.twig" %}
+
+{% block fos_user_content %}
+    {{ include('FOSUserBundel:Security:login_content.html.twig') }}
+{% endblock fos_user_content %}

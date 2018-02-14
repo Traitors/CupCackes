@@ -1,0 +1,17 @@
+my_app_user_homepage:
+    path:     /
+    defaults: { _controller: MyAppUserBundle:Default:index }
+
+Page_Client:
+    path:     /Page_Client
+    defaults: { _controller: MyAppUserBundle:PageClient }
+Page_Patisserie:
+    path:     /Page_Patisserie
+    defaults: { _controller: MyAppUserBundle:PagePatisserie }
+
+Page_Administrateur:
+    path:     /Page_Administrateur
+    defaults: { _controller: MyAppUserBundle:PageAdministrateur }
+affichage:
+    path:     /affichage
+    defaults: { _controller: MyAppUserBundle:affichage }
