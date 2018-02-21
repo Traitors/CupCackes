@@ -1,0 +1,6 @@
+commande_homepage:
+    path:     /
+    defaults: { _controller: CommandeBundle:Default:index }
+produit:
+    path:     /produit
+    defaults: { _controller: CommandeBundle:Produit:List}
