@@ -48,15 +48,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <nav>
                         <ul class="nav navbar-nav">
-                            <li><a href="index.html" class="active">ACCUEIL</a></li>
+                            <li><a href="index.html" >ACCUEIL</a></li>
                             <li><a href="services.html">SERVICES</a></li>
-                            <li><a href="espaceclient.html">ESPACE CLIENT</a></li>
-                            <li><a href="espacepatisseries.html">EPACE PATISSERIES</a></li>
+                            <li><a href="protuit.html" class="active">Produit</a></li>
+                            <li><a href="reclamation.html">Reclamation</a></li>
                             <li><a href="about.html">ABOUT </a></li>
                             <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
+                           <!--<li><a href='{{ path('panier')}}'><img src="{{ asset ('bundles/images/icon.png')}}" alt=" " class="img-responsive"  > </a></li>-->
                         </ul>
                     </nav>
                 </div>
+
                 <!--/.navbar-collapse-->
                 <!--/.navbar-->
             </div>
@@ -75,52 +77,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <h3 class="heading">Most Popular cakes</h3>
         <div class="cakes_grids">
-            <div class="col-md-4">
-                <div class="cakes_grid1">
-                    <img src="{{ asset ('bundles/images/c1.jpg')}}" alt="popular cakes" />
-                    <h3>Sponge Cake</h3>
-                    <h3>Prix:${{ produit[0].prix }}</h3>
-                    <h3> <button class="buttonPanier"> Ajouter Au Panier </button> </h3>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="cakes_grid1">
-                    <img src="{{ asset ('bundles/images/c2.jpg')}}" alt="popular cakes" />
-                    <h3>Dessert Cake</h3>
-                    <h3>Prix:${{ produit[1].prix }}</h3>
-                    <h3> <button class="buttonPanier"> Ajouter Au Panier </button> </h3>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="cakes_grid1">
-                    <img src="{{ asset ('bundles/images/c3.jpg')}}" alt="popular cakes" />
-                    <h3>Cream Cake</h3>
-                    <h3>Prix:${{ produit[2].prix }}</h3>
-                    <h3> <button class="buttonPanier"> Ajouter Au Panier </button> </h3>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="cakes_bottom_grids">
+            {% for produit in produit %}
                 <div class="col-md-4">
+
                     <div class="cakes_grid1">
-                        <img src="{{ asset ('bundles/images/c4.jpg')}}" alt="popular cakes" />
-                        <h3>Cream Cake</h3>
-                        <h3>Prix:${{ produit[3].prix }}</h3>
-                        <h3> <button class="buttonPanier"> Ajouter Au Panier </button> </h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="cakes_grid1">
-                        <img src="{{ asset ('bundles/images/c5.jpg')}}" alt="popular cakes" />
-                        <h3>Chocolate Cake</h3>
-                        <h3>Prix:${{ produit[4].prix }}</h3>
-                        <h3> <button class="buttonPanier"> Ajouter Au Panier </button> </h3>
+                        <img src="{{ asset (produit.image)}}" alt="popular cakes" />
+                        <h3>{{ produit.nom }}</h3>
+                        <h3>Prix:${{ produit.prix }}</h3>
+                        <h3> <button class="buttonPanier" value="ajouter"> Ajouter Au Panier </button> </h3>
 
                     </div>
-                </div>
 
-                <div class="clearfix"></div>
-            </div>
+                    <div class="clearfix"></div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>

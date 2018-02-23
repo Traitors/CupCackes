@@ -22,11 +22,10 @@ class Commande
     private $id;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="date")
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\User", inversedBy="commande")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $date;
+    private $utilisateur;
 
     /**
      * @var bool
@@ -36,25 +35,25 @@ class Commande
     private $valide;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="reference", type="string", length=255)
+     * @ORM\Column(name="date", type="date")
      */
-    private $reference;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="produit", type="string", length=255)
-     */
-    private $produit;
+    private $date;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="utilisateurId", type="integer")
+     * @ORM\Column(name="reference", type="integer")
      */
-    private $utilisateurId;
+    private $reference;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="commande", type="array")
+     */
+    private $commande;
 
 
     /**
@@ -68,27 +67,27 @@ class Commande
     }
 
     /**
-     * Set date
+     * Set utilisateur
      *
-     * @param \DateTime $date
+     * @param string $utilisateur
      *
      * @return Commande
      */
-    public function setDate($date)
+    public function setUtilisateur($utilisateur)
     {
-        $this->date = $date;
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }
 
     /**
-     * Get date
+     * Get utilisateur
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getDate()
+    public function getUtilisateur()
     {
-        return $this->date;
+        return $this->utilisateur;
     }
 
     /**
@@ -116,9 +115,33 @@ class Commande
     }
 
     /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Commande
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
      * Set reference
      *
-     * @param string $reference
+     * @param integer $reference
      *
      * @return Commande
      */
@@ -132,7 +155,7 @@ class Commande
     /**
      * Get reference
      *
-     * @return string
+     * @return int
      */
     public function getReference()
     {
@@ -140,51 +163,27 @@ class Commande
     }
 
     /**
-     * Set produit
+     * Set commande
      *
-     * @param string $produit
+     * @param array $commande
      *
      * @return Commande
      */
-    public function setProduit($produit)
+    public function setCommande($commande)
     {
-        $this->produit = $produit;
+        $this->commande = $commande;
 
         return $this;
     }
 
     /**
-     * Get produit
+     * Get commande
      *
-     * @return string
+     * @return array
      */
-    public function getProduit()
+    public function getCommande()
     {
-        return $this->produit;
-    }
-
-    /**
-     * Set utilisateurId
-     *
-     * @param integer $utilisateurId
-     *
-     * @return Commande
-     */
-    public function setUtilisateurId($utilisateurId)
-    {
-        $this->utilisateurId = $utilisateurId;
-
-        return $this;
-    }
-
-    /**
-     * Get utilisateurId
-     *
-     * @return int
-     */
-    public function getUtilisateurId()
-    {
-        return $this->utilisateurId;
+        return $this->commande;
     }
 }
 

@@ -153,7 +153,7 @@ class Produit
      */
     public function getImage()
     {
-        return $this->image;
+        return 'bundles/images/'.$this->image;
     }
 }
 
