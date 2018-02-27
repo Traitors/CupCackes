@@ -16,9 +16,10 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
-            new MyApp\UserBundle\MyAppUserBundle(),
+            new UserBundle\UserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new CommandeBundle\CommandeBundle(),
+            new ReclamationBundle\ReclamationBundle(),
+            new Siphoc\PdfBundle\SiphocPdfBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

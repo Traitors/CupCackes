@@ -1,0 +1,87 @@
+reclamation_commande:
+    resource: "@ReclamationBundle/Resources/config/routing/commande.yml"
+    prefix:   /commande
+
+
+
+reclamation_homepage:
+    path:     /
+    defaults: { _controller: ReclamationBundle:Default:index }
+reclamation_Affiche:
+    path:     /affiche
+    defaults: { _controller: ReclamationBundle:Reclamation:Affiche}
+
+reclamation_Reclamation:
+    path:     /reclamtion/{id}
+    defaults: { _controller: ReclamationBundle:Reclamation:Reclamation}
+reclamation_detail_user:
+    path:    /reclamation/detail/{id}
+    defaults: { _controller: ReclamationBundle:Reclamation:detailsUser}
+userdash:
+    path:    /userinfo
+    defaults: { _controller: ReclamationBundle:Reclamation:userDash }
+
+reclamation_display:
+    path:    /reclamation
+    defaults: { _controller: ReclamationBundle:Reclamation:index }
+
+reclamation_detail:
+    path:    /admin/reclamation/detail/{id}
+    defaults: { _controller: ReclamationBundle:Reclamation:details }
+
+reponse_create:
+    path:    /admin/reponsereclamation/create/{idreclamation}
+    defaults: { _controller: ReclamationBundle:Reclamation:create }
+
+reclamation_delete:
+    path:    /delete/{idreclamation}
+    defaults: {_controller: ReclamationBundle:Reclamation:delete}
+panier_index:
+    path:     /panier
+    defaults: { _controller: "ReclamationBundle:Panier:index" }
+panier_front:
+    path:     /panierfront
+    defaults: { _controller: "ReclamationBundle:Panier:front" }
+panier_show:
+    path:     /{id}/showpanier
+    defaults: { _controller: "ReclamationBundle:Panier:show" }
+
+panier_new:
+    path:     /{id}/newpanier
+    defaults: { _controller: "ReclamationBundle:Panier:new" }
+
+panier_edit:
+    path:     /{id}/editpanier
+    defaults: { _controller: "ReclamationBundle:Panier:edit" }
+
+panier_delete:
+    path:     /{id}/deletepanier
+    defaults: { _controller: "ReclamationBundle:Panier:delete" }
+commande_index:
+    path:     /commande
+    defaults: { _controller: "ReclamationBundle:Commande:index" }
+
+commande_show:
+    path:     /{id}/showcommande
+    defaults: { _controller: "ReclamationBundle:Commande:show" }
+
+commande_new:
+    path:     /newcommande
+    defaults: { _controller: "ReclamationBundle:Commande:new" }
+
+commande_edit:
+    path:     /{id}/editcommande
+    defaults: { _controller: "ReclamationBundle:Commande:edit" }
+
+commande_delete:
+    path:     /{id}/deletecommande
+    defaults: { _controller: "ReclamationBundle:Commande:delete" }
+payment:
+    path:     /{id}/payment
+    defaults: { _controller: "ReclamationBundle:Commande:payment" }
+carte:
+    path:     /carte
+    defaults: { _controller: "ReclamationBundle:Commande:carte" }
+pgf:
+    path:     /pgf
+    defaults: { _controller: "ReclamationBundle:Commande:pgf" }
