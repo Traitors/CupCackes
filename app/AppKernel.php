@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new ReclamationBundle\ReclamationBundle(),
-            new Siphoc\PdfBundle\SiphocPdfBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

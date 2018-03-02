@@ -65,6 +65,7 @@
                                 <tbody>
 
                                 {% for r in reclamations %}
+
                                     <tr>
                                         <td> {{ r.getSujetreclamation }}</a></td>
                                         <td>{{ r.getDescriptionreclamation }}</td>
@@ -77,6 +78,11 @@
                                                 {% if r.getStatusreclamation =="En cours" %}
                                                 <span class="label label-warning">
                                             {% endif %}
+
+                                                    {% if r.getStatusreclamation =="Terminer" %}
+                                                    <span class="label label-default">
+                                            {% endif %}
+
 
                                                     {{ r.getStatusreclamation }}</span>
                                             </span>
@@ -91,6 +97,11 @@
 
                                                 <a href="{{ path('reponse_create',{idreclamation:r.idreclamation}) }}" class="btn btn-primary btn-sm">Répondre</a>
 
+                                            {% endif %}
+                                            {% if r.getStatusreclamation == "Terminer" %}
+                                            {% else %}
+
+                                            <button type="button" class="btn btn-primary"><a href="{{ path('reclamation_traite',{'id':r.idreclamation , 'id1':r.produit.idAgent.getId}) }}">Traiter</a></button>
                                             {% endif %}
                                             <!-- Button trigger modal -->
                                             <a  type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
@@ -114,8 +125,9 @@
 
                                                         </div>
                                                         <div class="modal-footer">
+                                                            <a href="{{ path('reclamation_delete',{idreclamation:r.idreclamation}) }}" class="btn btn-primary btn-sm">Supprimer</a>
+
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">annuler</button>
-                                                            <button type="button" class="btn btn-danger"><a href="{{ path('reclamation_delete',{idreclamation:r.getIdreclamation}) }}">Supprimer</a></button>
 
                                                         </div>
                                                     </div>
@@ -127,6 +139,8 @@
 
                                     </td>
                                     </tr>
+
+
 
 
                                 {% endfor %}
@@ -192,6 +206,7 @@
 
 </script>
 -->
+
 
 
 

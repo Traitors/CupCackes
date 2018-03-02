@@ -11,7 +11,8 @@ use Doctrine\ORM\EntityRepository;
 
 class ReclamationRechercheRepository extends EntityRepository
 {
-    public function search($search){
+    public function search($search)
+    {
 
 
         $qb = $this->_em->createQueryBuilder();

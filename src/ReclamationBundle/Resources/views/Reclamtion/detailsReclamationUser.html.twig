@@ -1,0 +1,272 @@
+{% extends "default/layout.html.twig" %}
+{% block login %}
+    <li><a href="{{ path('userdash') }}"> Welcome {{ name }}</a>
+    <li><a href="contact.html">Contact</a>
+<li><a href="{{ path('fos_user_security_logout') }}">Logout</a>
+    {% endblock %}
+
+    {% block content %}
+
+    <link href="{{ asset('asseets/css/detailReclamation.css')}}" rel="stylesheet">
+    <link href="{{ asset('asseets/css/warningBOX.css')}}" rel="stylesheet">
+
+    <body>
+
+    <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+
+                    <ul class="breadcrumb">
+                        <li><a href="userdash">Acceuil</a>
+                        </li>
+                        <li>Mes reclamations</li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md-3">
+                    <!-- *** CUSTOMER MENU ***
+    _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Customer section</h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active">
+                                    <a href="{{ path('userdash') }}"><i class="fa fa-list"></i> Mes reclamations <span class="badge"> {{ reclamations | length }}</span></a>
+                                </li>
+                                <li>
+                                    {#<a href="{{ path('whishlist_index') }}"><i class="fa fa-heart"></i> Ma liste de#}
+                                        {#voeux</a>#}
+                                </li>
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out"></i>
+                                        Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <!-- *** CUSTOMER MENU END *** -->
+                </div>
+
+                <div class="col-md-9">
+                    <div class="box well col-md-12">
+
+
+
+                        <section class="comments">
+                            <article class="comment">
+                                <a class="comment-img" href="#non">
+                                    <img src="{{ asset('images/boy.png') }}" alt="" width="50" height="50">
+                                </a>
+                                <div class="comment-body">
+
+
+                                    <h3> Sujet : {{ reclamation.sujetreclamation }}</h3>
+
+                                    <div class="text">
+                                        <p>{{ reclamation.descriptionreclamation }}</p>
+                                    </div>
+                                    <p class="attribution">by <a href="#non">{{ reclamation.idclient.username }}</a> at {{ reclamation.datereclamation | date }}</p>
+                                </div>
+                            </article>
+                            {% if reponse  %}
+
+                                <article class="comment">
+                                    <a class="comment-img" href="#non">
+                                        <img src="{{ asset('images/boy.png') }}" alt="" width="50" height="50">
+                                    </a>
+                                    <div class="comment-body">
+
+                                        <h3> Sujet : {{ reponse.sujet }}</h3>
+                                        <div class="text">
+                                            <p>Sujet : {{ reponse.reponse }}</p>
+                                        </div>
+                                        <p class="attribution">by admin <a href="#non">{{ reponse.idadmin.username }}</a> </p>
+
+                                    </div>
+                                </article>
+
+                            {% endif %}
+                        </section>
+
+
+
+
+                    </div>
+
+                    {% if reponse == null %}
+                        <div class="container">
+                            <div class="col-sm-10" style="    padding-right: 15%;">
+                                <div class="bs-calltoaction bs-calltoaction-warning">
+                                    <div class="row">
+                                        <div class="col-md-9 cta-contents " align="center">
+                                            <h3 class="cta-title">Votre reclamation est en cours de traitement   </h3>
+                                            <p> vous serez averti quand elle sera traitée</p>
+                                            <div class="cta-desc">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+
+        <!-- *** FOOTER ***
+    _________________________________________________________ -->
+        <div id="footer" data-animate="fadeInUp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <h4>Pages</h4>
+
+                        <ul>
+                            <li><a href="text.html">About us</a>
+                            </li>
+                            <li><a href="text.html">Terms and conditions</a>
+                            </li>
+                            <li><a href="faq.html">FAQ</a>
+                            </li>
+                            <li><a href="contact.html">Contact us</a>
+                            </li>
+                        </ul>
+
+                        <hr>
+
+                        <h4>User section</h4>
+
+                        <ul>
+                            <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                            </li>
+                            <li><a href="register.html">Regiter</a>
+                            </li>
+                        </ul>
+
+                        <hr class="hidden-md hidden-lg hidden-sm">
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Top categories</h4>
+
+                        <h5>Men</h5>
+
+                        <ul>
+                            <li><a href="category.html">T-shirts</a>
+                            </li>
+                            <li><a href="category.html">Shirts</a>
+                            </li>
+                            <li><a href="category.html">Accessories</a>
+                            </li>
+                        </ul>
+
+                        <h5>Ladies</h5>
+                        <ul>
+                            <li><a href="category.html">T-shirts</a>
+                            </li>
+                            <li><a href="category.html">Skirts</a>
+                            </li>
+                            <li><a href="category.html">Pants</a>
+                            </li>
+                            <li><a href="category.html">Accessories</a>
+                            </li>
+                        </ul>
+
+                        <hr class="hidden-md hidden-lg">
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Where to find us</h4>
+
+                        <p><strong>Obaju Ltd.</strong>
+                            <br>13/25 New Avenue
+                            <br>New Heaven
+                            <br>45Y 73J
+                            <br>England
+                            <br>
+                            <strong>Great Britain</strong>
+                        </p>
+
+                        <a href="contact.html">Go to contact page</a>
+
+                        <hr class="hidden-md hidden-lg">
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Get the news</h4>
+
+                        <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                            ac turpis egestas.</p>
+
+                        <form>
+                            <div class="input-group">
+
+                                <input type="text" class="form-control">
+
+                                <span class="input-group-btn">
+
+			    <button class="btn btn-default" type="button">Subscribe!</button>
+
+			</span>
+
+                            </div>
+                            <!-- /input-group -->
+                        </form>
+
+                        <hr>
+
+                        <h4>Stay in touch</h4>
+
+                        <p class="social">
+                            <a href="#" class="facebook external" data-animate-hover="shake"><i
+                                        class="fa fa-facebook"></i></a>
+                            <a href="#" class="twitter external" data-animate-hover="shake"><i
+                                        class="fa fa-twitter"></i></a>
+                            <a href="#" class="instagram external" data-animate-hover="shake"><i
+                                        class="fa fa-instagram"></i></a>
+                            <a href="#" class="gplus external" data-animate-hover="shake"><i
+                                        class="fa fa-google-plus"></i></a>
+                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-envelope"></i></a>
+                        </p>
+
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+        </div>
+    </div>
+    </body>
+{% endblock %}

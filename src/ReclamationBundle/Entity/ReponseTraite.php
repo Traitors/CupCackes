@@ -5,12 +5,12 @@ namespace ReclamationBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Reponsereclamation
+ * ReponseTraite
  *
- * @ORM\Table(name="reponsereclamation", indexes={@ORM\Index(name="idadmin", columns={"idadmin"}), @ORM\Index(name="idreclamation", columns={"idreclamation"})})
+ * @ORM\Table(name="reponsetraite", indexes={@ORM\Index(name="idtraite", columns={"id"})})
  * @ORM\Entity
  */
-class Reponsereclamation
+class ReponseTraite
 {
     /**
      * @var integer
@@ -44,24 +44,16 @@ class Reponsereclamation
 
 
     /**
-     * @var \ReclamationBundle\Entity\Reclamation
+     * @var \ReclamationBundle\Entity\traitereclamation
      *
-     * @ORM\ManyToOne(targetEntity="Reclamation")
+     * @ORM\ManyToOne(targetEntity="traitereclamation")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idreclamation", referencedColumnName="idReclamation")
+     *   @ORM\JoinColumn(name="idtraite", referencedColumnName="id")
      * })
      */
-    private $idreclamation;
+    private $idtraite;
 
-    /**
-     * @var \Symfony\Bridge\Doctrine\Security\User\EntityUserProvider
-     *
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idadmin", referencedColumnName="id")
-     * })
-     */
-    private $idadmin;
+
 
     /**
      * @return int
@@ -128,36 +120,22 @@ class Reponsereclamation
     }
 
     /**
-     * @return \ReclamationBundle\Entity\Reclamation
+     * @return \ReclamationBundle\Entity\traitereclamation
      */
-    public function getIdreclamation()
+    public function getIdtraite()
     {
-        return $this->idreclamation;
+        return $this->idtraite;
     }
 
     /**
-     * @param \ReclamationBundle\Entity\Reclamation $idreclamation
+     * @param \ReclamationBundle\Entity\traitereclamation $idtraite
      */
-    public function setIdreclamation($idreclamation)
+    public function setIdtraite($idtraite)
     {
-        $this->idreclamation = $idreclamation;
+        $this->idtraite = $idtraite
+        ;
     }
 
-    /**
-     * @return \Symfony\Bridge\Doctrine\Security\User\EntityUserProvider
-     */
-    public function getIdadmin()
-    {
-        return $this->idadmin;
-    }
-
-    /**
-     * @param \UserBundle\Entity\User $idadmin
-     */
-    public function setIdadmin($idadmin)
-    {
-        $this->idadmin = $idadmin;
-    }
 
 
 }

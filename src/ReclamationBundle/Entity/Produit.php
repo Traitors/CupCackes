@@ -301,7 +301,7 @@ class Produit
      */
     public function getProductImg()
     {
-        return 'bundles/images/'.$this->productImg;
+        return $this->productImg;
     }
 
     /**
@@ -330,15 +330,15 @@ class Produit
     /**
      * @return \Symfony\Bridge\Doctrine\Security\User\EntityUserProvider
      */
-    public function getIAgent()
+    public function getIdAgent()
     {
         return $this->idAgent;
     }
 
     /**
-     * @param \Symfony\Bridge\Doctrine\Security\User\EntityUserProvider $idclient
+     * @param \Symfony\Bridge\Doctrine\Security\User\EntityUserProvider $idAgent
      */
-    public function setAgent($idAgent)
+    public function setIdAgent($idAgent)
     {
         $this->idAgent = $idAgent;
     }

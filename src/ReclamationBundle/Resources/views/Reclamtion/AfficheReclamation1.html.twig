@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bakery In a Hotel Category Bootstrap Responsive Website Template | Gallery :: w3layouts </title>
+    <title>Bakery In a Hotel Category Bootstrap Responsive Website Template | Typography :: w3layouts </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content=" Bakery In Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -15,13 +15,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
         function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-    <link href="{{ asset ('bundles/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap css -->
-    <link href="{{ asset ('bundles/css/gallery.css')}}"    rel="stylesheet" type="text/css" media="all" /><!-- gallery css -->
-    <link href="{{ asset ('bundles/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap css -->
+    <link href="{{ asset('css/typography.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- typography css -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
 
-    <link href="{{ asset ('bundles/css/jQuery.lightninBox.css')}}" rel="stylesheet" type="text/css" media="all" /><!-- for gallery lightninBox css -->
-
-    <link href="{{ asset ('bundles/css/font-awesome.css')}}" rel="stylesheet"><!-- fontawesome css -->
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet"> <!-- fontawesome css -->
     <!--fonts-->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
@@ -31,7 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 
 <!-- header -->
-<div class="header" id="home">
+<div class="header">
     <div class="content white">
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
@@ -42,20 +40,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
+                    <a class="navbar-brand" href="index.html">
+                        <h1>Bakery In</h1>
+                    </a>
                 </div>
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <nav>
                         <ul class="nav navbar-nav">
-                            <li><a href="{{ 'Page_Client' }}" >Home</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About </a></li>
+                            <li><a href="services.html">Services</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Service<b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Pages <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="icons.html">Icons</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="typography.html">Typography</a></li>
+                                </ul>
                             </li>
-                            <li><a href={{ 'affiche' }} class="active">Produit</a></li>
-                            <li><a href={{ 'affiche' }}>Reclamerer</a></li>
-                            <li><a href={{ 'userinfo'}}>Mes  reclamation</a></li>
-                            <li><a href="contact.html">Diconnexion</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Mail Us</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -69,58 +74,64 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- innerpages_banner -->
 <div class="innerpages_banner">
-    <h2>Paniers list</h2>
+    <h2>Mes Réclamations</h2>
 </div>
 <!-- //innerpages_banner -->
 
-<table class="table table-striped table-hover">
-    <thead>
-    <tr>
-        <th>Nom</th>
-        <th>Prix</th>
-        <th>Annuler</th>
-
-    </tr>
-    </thead>
-    <tbody>
-    {% for panier in paniers %}
-        <tr>
-
-            <td>{{ panier.produit.nomp }}</td>
-            <td>{{ panier.produit.prix }}</td>
-            <td>
-                        <a class="btn btn-success" href="{{ path('panier_delete', { 'id': panier.id }) }}">Annuler</a>
-            </td>
-        </tr>
-    {% endfor %}
-
-
-    </tbody>
-</table>
-
-
-<h4>  la total de votre panier est {{ tot }}</h4>
-
-
-    <a class="btn btn-success" href="{{ path('commande_new') }}">Passe Commande</a>
-
-
-
-<!-- /Portfolio section -->
-
-<!-- subscribe -->
-<div class="subscribe">
+<!-- typography -->
+<div class="typo">
     <div class="container">
-        <h3 class="heading">Subscribe To Get Notifications</h3>
-        <div class="subscribe-grid">
-            <form action="#" method="post">
-                <input type="email" placeholder="Enter Your Email" name="email" required="">
-                <button class="btn1"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-            </form>
+
+
+
+
+
+        <div class="page-header">
+            <h3 class="bars">Tableaux des Réclamations</h3>
         </div>
+
+        <div class="bs-docs-example">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Sujet</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Nom du produit</th>
+                    <th>Action</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for r in reclamations %}
+                <tr>
+                    <td> {{ r.getSujetreclamation }}</td>
+                    <td>{{ r.getDescriptionreclamation }}</td>
+                    <td>{{ r.getDatereclamation|date('Y-m-d ') }}</td>
+                    <td>
+                        {% if r.getStatusreclamation =="Traitée" %}
+                        <span class="label label-success">
+                                            {% endif %}
+                            {% if r.getStatusreclamation =="En cours" %}
+                            <span class="label label-warning">
+                                            {% endif %} {{ r.getStatusreclamation }}</span>
+                    </td>
+
+                    <td>{{ r.getProduit.getNomp }} </td>
+                    <td> <a href="{{ path('reclamation_detail_user',{id:r.idreclamation}) }}" class="btn btn-primary btn-sm">Details</a></td>
+                    {% endfor %}
+</tr>
+            </table>
+        </div>
+
     </div>
 </div>
-<!-- //subscribe -->
+<!-- //typography -->
+
+
+
 
 <!-- footer -->
 <div class="footer">
@@ -198,69 +209,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <h3>Instagram Posts</h3>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img src="{{ asset ('bundles/images/post1.jpg')}}" alt=" " class="img-responsive" />
+                        <img src="{{ asset('images/post1.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img src="{{ asset ('bundles/')}}images/post2.jpg" alt=" " class="img-responsive" />
+                        <img src="{{ asset('images/post2.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img src="{{ asset ('bundles/images/post3.jpg')}}" alt=" " class="img-responsive" />
+                        <img src="{{ asset('images/post3.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img src="{{ asset ('bundles/images/post4.jpg')}}" alt=" " class="img-responsive" />
+                        <img src="{{ asset('images/post4.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img src="{{ asset ('bundles/images/post5.jpg')}}" alt=" " class="img-responsive" />
+                        <img src="{{ asset('images/post5.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img src="{{ asset ('bundles/images/post6.jpg')}}" alt=" " class="img-responsive" />
+                        <img src="{{ asset('images/post6.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
             <div class="clearfix"> </div>
         </div>
-
         <div class="agileinfo_copyright">
             <p>© 2018 Bakery In. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a>
             </p>
         </div>
     </div>
-    <!-- payment nav -->
-
-    <!--/ payment nav -->
 </div>
 <!-- //footer -->
 
 <!-- Supportive js -->
-<script type="text/javascript" src="{{ asset ('bundles/js/jquery-2.1.4.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 <!-- //Supportive js -->
-<script type="text/javascript" src="{{ asset ('bundles/js/bootstrap.js')}}"></script><!-- bootstrap js file -->
-
-<!-- js for portfolio lightbox -->
-<script src="{{ asset ('bundles/js/jQuery.lightninBox.js')}}"></script>
-<script type="text/javascript">
-    $(".lightninBox").lightninBox();
-</script>
-<!-- /js for portfolio lightbox -->
+<script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script><!-- bootstrap js file -->
 
 <!-- smooth scrolling js -->
-<script src="{{ asset ('bundles/js/SmoothScroll.min.js')}}"></script>
+<script src="../../../../../web/js/SmoothScroll.min.js"></script>
 <!-- smooth scrolling js -->
 
 <!-- start-smooth-scrolling -->
-<script type="text/javascript" src="{{ asset ('bundles/js/move-top.js')}}"></script>
-<script type="text/javascript" src="{{ asset ('bundles/js/easing.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
 <script type="text/javascript">
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event){
@@ -274,13 +274,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript">
     $(document).ready(function() {
         /*
-            var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-            };
-        */
+         var defaults = {
+         containerID: 'toTop', // fading element id
+         containerHoverID: 'toTopHover', // fading element hover id
+         scrollSpeed: 1200,
+         easingType: 'linear'
+         };
+         */
 
         $().UItoTop({ easingType: 'easeOutQuart' });
 
@@ -289,8 +289,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //here ends scrolling icon -->
 
 <!-- move to top-js-files -->
-<script type="text/javascript" src="{{ asset ('bundles/js/move-top.js')}}"></script>
-<script type="text/javascript" src="{{ asset ('bundles/js/easing.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
 <!-- //move to top-js-files -->
 
 </body>

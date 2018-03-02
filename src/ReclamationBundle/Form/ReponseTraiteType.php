@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: émine
+ * Date: 08/04/2017
+ * Time: 23:09
+ */
 
 namespace ReclamationBundle\Form;
 
@@ -6,21 +12,22 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CommandeType extends AbstractType
+
+class ReponseTraiteType  extends AbstractType
 {
-    /**
-     * {@inheritdoc}
-     */
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('pays')->add('ville')->add('codepostale')->add('numtel')->add('email');
-    }/**
+        $builder->add('sujet')->add('reponse');
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'ReclamationBundle\Entity\Commande'
+            'data_class' => 'ReclamationBundle\Entity\ReponseTraite'
         ));
     }
 
@@ -29,7 +36,7 @@ class CommandeType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'reclamationbundle_commande';
+        return 'reclamationbundle_ReponseTraite';
     }
 
 

@@ -15,13 +15,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
         function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap css -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap css -->
+    <link  href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
 
-    <link href="css/font-awesome.css" rel="stylesheet"> <!-- fontawesome css -->
+    <link   href="{{ asset('css/font-awesome.css') }}"  rel="stylesheet"> <!-- fontawesome css -->
     <!--fonts-->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="{{ asset('//fonts.googleapis.com/css?family=Open+Sans:400,600,700') }}"  rel="stylesheet" type="text/css">
+    <link  href="{{ asset('//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese') }}" rel="stylesheet">
     <!--//fonts-->
 
 </head>
@@ -51,8 +51,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Service<b class="caret"></b></a>
                             </li>
-                            <li><a href="services.html">Reclamerer</a></li>
-                            <li><a href="gallery.html">About</a></li>
+                            <li><a href={{ 'affiche' }}>Reclamerer</a></li>
+                            <li><a href={{ 'traiteAgent'}}>Mes  reclamation</a></li>
                             <li><a href="contact.html">Diconnexion</a></li>
                         </ul>
                     </nav>
@@ -84,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="#about" class="hvr-bounce-to-right read scroll"><span class="fa fa-birthday-cake" aria-hidden="true"></span>Read More</a>
                     </div>
                     <div class="col-md-6 slider_right">
-                        <img asset="images/cake.png" alt="cake1" />
+                        <img src= "{{ asset('images/cake.png') }}" alt="cake1" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -99,7 +99,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="#about" class="hvr-bounce-to-right read scroll"><span class="fa fa-birthday-cake" aria-hidden="true"></span>Read More</a>
                     </div>
                     <div class="col-md-6 slider_right">
-                        <img asset="images/cake1.png" alt="cake1" />
+                        <img src= "{{ asset('images/cake1.jpg') }}" alt="cake1" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -114,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="#about" class="hvr-bounce-to-right read scroll"><span class="fa fa-birthday-cake" aria-hidden="true"></span>Read More</a>
                     </div>
                     <div class="col-md-6 slider_right">
-                        <img asset="images/cake2.png" alt="cake1" />
+                        <img src= "{{ asset('images/cake2.png') }}" alt="cake1" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -129,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="#about" class="hvr-bounce-to-right read scroll"><span class="fa fa-birthday-cake" aria-hidden="true"></span>Read More</a>
                     </div>
                     <div class="col-md-6 slider_right">
-                        <img asset="images/cake3.png" alt="cake1" />
+                        <img src= "{{ asset('images/cake3.png') }}" alt="cake1" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -153,7 +153,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <div class="col-md-6 welcome-w3lright">
             <div class="video-grid-single-page-agileits">
-                <div data-video="qvtjaAW3m-E" id="video"> <img asset="images/about.png" alt="" class="img-responsive" /> </div>
+                <div data-video="qvtjaAW3m-E" id="video"> <img src= "{{ asset('images/about.png') }}" alt="" class="img-responsive" /> </div>
             </div>
         </div>
         <div class="col-md-6 welcome_left">
@@ -226,21 +226,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="cakes_grids">
             <div class="col-md-4">
                 <div class="cakes_grid1">
-                    <img asset="images/c1.jpg" alt="popular cakes" />
+                    <img src= "{{ asset('images/c1.jpg') }}" alt="popular cakes" />
                     <h3>Sponge Cake</h3>
                     <p>Vestibulum volutpat faucibus semper</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="cakes_grid1">
-                    <img asset="images/c2.jpg" alt="popular cakes" />
+                    <img src= "{{ asset('images/c2.jpg') }}" alt="popular cakes" />
                     <h3>Dessert Cake</h3>
                     <p>Vestibulum volutpat faucibus semper</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="cakes_grid1">
-                    <img asset="images/c3.jpg" alt="popular cakes" />
+                    <img src= "{{ asset('images/c3.jpg') }}" alt="popular cakes" />
                     <h3>Cream Cake</h3>
                     <p>Vestibulum volutpat faucibus semper</p>
                 </div>
@@ -249,21 +249,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="cakes_bottom_grids">
                 <div class="col-md-4">
                     <div class="cakes_grid1">
-                        <img asset="images/c4.jpg" alt="popular cakes" />
+                        <img src= "{{ asset('images/c4.jpg') }}" alt="popular cakes" />
                         <h3>Cream Cake</h3>
                         <p>Vestibulum volutpat faucibus semper</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="cakes_grid1">
-                        <img asset="images/c5.jpg" alt="popular cakes" />
+                        <img src= "{{ asset('images/c5.jpg') }}" alt="popular cakes" />
                         <h3>Chocolate Cake</h3>
                         <p>Vestibulum volutpat faucibus semper</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="cakes_grid1">
-                        <img asset="images/c6.jpg" alt="popular cakes" />
+                        <img src= "{{ asset('images/c6.jpg') }}"alt="popular cakes" />
                         <h3>Butter Cake</h3>
                         <p>Vestibulum volutpat faucibus semper</p>
                     </div>
@@ -276,74 +276,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //Popular cakes -->
 
 
-<!-- team -->
-<div class="team" id="team">
-    <div class="agile_dot_info two">
-        <div class="container">
-            <h3 class="heading">Our Staff</h3>
-            <div class="agileits_team_grids">
-                <div class="col-md-3">
-                    <div class="agileits_team_grid">
-                        <div class="agileits_team_grid_figure">
-                            <img asset="images/chef1.jpg" alt=" " class="img-responsive" />
-                        </div>
-                        <h4>Jane Robert</h4>
-                        <div class="social-icon">
-                            <a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="social-button dribbble"><i class="fa fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="agileits_team_grid">
-                        <div class="agileits_team_grid_figure">
-                            <img asset="images/chef2.jpg" alt=" " class="img-responsive" />
-                        </div>
-                        <h4>James Doe</h4>
-                        <div class="social-icon">
-                            <a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="social-button dribbble"><i class="fa fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="agileits_team_grid">
-                        <div class="agileits_team_grid_figure">
-                            <img asset="images/chef3.jpg" alt=" " class="img-responsive" />
-                        </div>
-                        <h4>Laura Olivia</h4>
-                        <div class="social-icon">
-                            <a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="social-button dribbble"><i class="fa fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="agileits_team_grid">
-                        <div class="agileits_team_grid_figure">
-                            <img asset="images/chef4.jpg" alt=" " class="img-responsive" />
-                        </div>
-                        <h4>William James</h4>
-                        <div class="social-icon">
-                            <a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="social-button dribbble"><i class="fa fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //team -->
+
+
 
 <!-- testimonials -->
 <div class="testimonials">
@@ -356,7 +290,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="banner-wrap">
                             <div class="testimonials-grid">
                                 <div class="testimonials-grid-left">
-                                    <img asset="images/t1.jpg" alt=" " class="img-responsive" />
+                                    <img src= "{{ asset('images/t1.jpg') }}" alt=" " class="img-responsive" />
                                 </div>
                                 <div class="testimonials-grid-right">
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
@@ -372,7 +306,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="banner-wrap">
                             <div class="testimonials-grid">
                                 <div class="testimonials-grid-left">
-                                    <img asset="images/t3.jpg" alt=" " class="img-responsive" />
+                                    <img src= "{{ asset('images/t3.jpg') }}" alt=" " class="img-responsive" />
                                 </div>
                                 <div class="testimonials-grid-right">
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
@@ -388,7 +322,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="banner-wrap">
                             <div class="testimonials-grid">
                                 <div class="testimonials-grid-left">
-                                    <img asset="images/t2.jpg" alt=" " class="img-responsive" />
+                                    <img src= "{{ asset('images/t2.jpg') }}" alt=" " class="img-responsive" />
                                 </div>
                                 <div class="testimonials-grid-right">
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
@@ -404,7 +338,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="banner-wrap">
                             <div class="testimonials-grid">
                                 <div class="testimonials-grid-left">
-                                    <img asset="images/t1.jpg" alt=" " class="img-responsive" />
+                                    <img src= "{{ asset('images/t1.jpg') }}" alt=" " class="img-responsive" />
                                 </div>
                                 <div class="testimonials-grid-right">
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
@@ -460,11 +394,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                        <a href="about.html">About Us</a>
+                        <a href="about.html">Mes  reclamation</a>
                     </li>
                     <li>
                         <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                        <a href="services.html">Services</a>
+                        <a href="{{ 'affiche' }}">Services</a>
                     </li>
                     <li>
                         <span class="fa fa-angle-double-right" aria-hidden="true"></span>
@@ -513,32 +447,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <h3>Instagram Posts</h3>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img asset="images/post1.jpg" alt=" " class="img-responsive" />
+                        <img src= "{{ asset('images/post1.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img asset="images/post2.jpg" alt=" " class="img-responsive" />
+                        <img src= "{{ asset('images/post2.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img asset="images/post3.jpg" alt=" " class="img-responsive" />
+                        <img src= "{{ asset('images/post3.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img asset="images/post4.jpg" alt=" " class="img-responsive" />
+                        <img src= "{{ asset('images/post4.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img asset="images/post5.jpg" alt=" " class="img-responsive" />
+                        <img src= "{{ asset('images/post5.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="w3_agileits_footer_grid_left">
                     <a href="#">
-                        <img asset="images/post6.jpg" alt=" " class="img-responsive" />
+                        <img src= "{{ asset('images/post6.jpg') }}" alt=" " class="img-responsive" />
                     </a>
                 </div>
                 <div class="clearfix"> </div>
@@ -554,11 +488,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //footer -->
 
 <!-- Supportive js -->
-<script type="text/javascript" asset="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 <!-- //Supportive js -->
 
 <!-- banner bottom video script -->
-<script asset="js/simplePlayer.js"></script>
+<script src="{{ asset('js/simplePlayer.js') }} " ></script>
 <script>
     $("document").ready(function() {
         $("#video").simplePlayer();
@@ -567,19 +501,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //banner bottom video script -->
 
 <!-- testimonials plugin script -->
-<script asset="js/jquery.wmuSlider.js"></script>
+<script src="{{ asset('js/jquery.wmuSlider.js') }}"></script>
 <script>
     $('.example1').wmuSlider();
 </script>
 <!-- testimonials plugin script -->
 
 <!-- smooth scrolling js -->
-<script asset="js/SmoothScroll.min.js"></script>
+<script src="{{ asset('js/SmoothScroll.min.js') }}" ></script>
 <!-- smooth scrolling js -->
 
 <!-- start-smooth-scrolling -->
-<script type="text/javascript" asset="js/move-top.js"></script>
-<script type="text/javascript" asset="js/easing.js"></script>
+<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/easing.js') }}" ></script>
 <script type="text/javascript">
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event){
@@ -608,11 +542,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //here ends scrolling icon -->
 
 <!-- move to top-js-files -->
-<script type="text/javascript" asset="js/move-top.js"></script>
-<script type="text/javascript" asset="js/easing.js"></script>
+<script type="text/javascript" src="{{ asset('js/move-top.js') }}" ></script>
+<script type="text/javascript"   src="{{ asset('js/easing.js') }} "></script>
 <!-- //move to top-js-files -->
 
-<script type="text/javascript" asset="js/bootstrap.js"></script><!-- bootstrap js file -->
+<script type="text/javascript"  src="{{ asset('js/bootstrap.js') }} "></script><!-- bootstrap js file -->
 
 </body>
 </html>
